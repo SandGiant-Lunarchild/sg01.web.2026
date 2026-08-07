@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.5.0" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>cd27d807-c25c-4f2c-a4e5-bdbc4042c584</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\sg01.web.2026.angular\sg01.web.2026.angular.esproj" />
+    <ProjectReference Include="..\sg01.web.2026.ApiService\sg01.web.2026.ApiService.csproj" />
+    <ProjectReference Include="..\sg01.web.2026.react\sg01.web.2026.react.esproj" />
+    <ProjectReference Include="..\sg01.web.2026.Web\sg01.web.2026.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="13.4.6" />
+    <PackageReference Include="Aspire.Hosting.JavaScript" Version="13.4.6" />
+  </ItemGroup>
+
+</Project>
