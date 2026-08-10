@@ -1,4 +1,4 @@
-namespace sg01.web._2026.Web;
+namespace SG_01.Web.Blazor;
 
 public class WeatherApiClient(HttpClient httpClient)
 {

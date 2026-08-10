@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sg01.web.2026.ServiceDefaul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sg01.web.2026.ApiService", "sg01.web.2026.ApiService\sg01.web.2026.ApiService.csproj", "{AE8128CC-0DD7-2DB1-E9D8-70467683C74C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sg01.web.2026.Web", "sg01.web.2026.Web\sg01.web.2026.Web.csproj", "{01BBFB3E-9D98-F3A0-F243-49153031D91E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sg01.web.2026.Blazor", "sg01.web.2026.Web\sg01.web.2026.Blazor.csproj", "{01BBFB3E-9D98-F3A0-F243-49153031D91E}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "sg01.web.2026.react", "sg01.web.2026.react\sg01.web.2026.react.esproj", "{77ABAECD-5750-2E5E-E596-47E44419DE8E}"
 EndProject

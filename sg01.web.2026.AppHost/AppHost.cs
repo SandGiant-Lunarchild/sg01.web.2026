@@ -3,7 +3,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 var apiService = builder.AddProject<Projects.sg01_web__2026_ApiService>("apiservice")
     .WithHttpHealthCheck("/health");
 
-builder.AddProject<Projects.sg01_web__2026_Web>("webfrontend")
+builder.AddProject<Projects.sg01_web__2026_Blazor>("blazor")
     .WithExternalHttpEndpoints()
     .WithHttpHealthCheck("/health")
     .WithReference(apiService)

@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAspireSharedProject>true</IsAspireSharedProject>
+    <AssemblyName>SG_01.Web.ServiceDefaults</AssemblyName>
+    <RootNamespace>SG_01.Web.ServiceDefaults</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

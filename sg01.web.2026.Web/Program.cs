@@ -1,5 +1,5 @@
-using sg01.web._2026.Web;
-using sg01.web._2026.Web.Components;
+using SG_01.Web.Blazor;
+using SG_01.Web.Blazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
