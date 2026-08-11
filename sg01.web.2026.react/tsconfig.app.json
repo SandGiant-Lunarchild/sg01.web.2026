@@ -7,6 +7,7 @@
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
+    "allowJs": true, /* Allow JS for ParaGlide */
 
     /* Bundler mode */
     "moduleResolution": "bundler",
