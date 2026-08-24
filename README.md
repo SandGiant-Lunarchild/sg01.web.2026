@@ -31,3 +31,7 @@ Some of the choices I have made for this project include:
 * Use .NET Aspire to run everything. This allows for easy testing and debugging of all the different frameworks in one place, while also providing all logs and telemetry is one place.
 * Use Tailwind for styling. It is a popular framework that a lot of companies use, so getting familiar with it is a plus.
 * Use Tanstack Router for React. While not as popular as React Router or Next.js, I want to try it out and see how it compares to other routing libraries.
+* For localization routes: Use route to determine language, default route is English, /nl prefix for Dutch.
+* Blazor: Use ASP.NET built-in localization, to gain experience with it. After some trial and error managed to set up the routing to match.
+* React: Use Paraglide, as it seems to be the most flexible library suggested by Tanstack which I use for routing. It has built-in support for the route setup.
+* Angular: Tried to use the built-in localization, but ran into some problems (not supported with ngx-env, can't switch between languages in dev). Ended up using ngx-translate instead, since it is more flexible and supports live-reloading. Setup routes for language with common sub-routes for the normal pages.
