@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as WeatherRouteImport } from './routes/weather'
+import { Route as ArticlesIndexRouteImport } from './routes/articles/index'
+import { Route as ArticlesSlugRouteImport } from './routes/articles/$slug'
+import { Route as SweeperIndexRouteImport } from './routes/sweeper/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +25,59 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WeatherRoute = WeatherRouteImport.update({
-  id: '/weather',
-  path: '/weather',
+const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
+  id: '/articles/',
+  path: '/articles/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
+  id: '/articles/$slug',
+  path: '/articles/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SweeperIndexRoute = SweeperIndexRouteImport.update({
+  id: '/sweeper/',
+  path: '/sweeper/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/weather': typeof WeatherRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
+  '/articles/': typeof ArticlesIndexRoute
+  '/sweeper/': typeof SweeperIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/weather': typeof WeatherRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
+  '/articles': typeof ArticlesIndexRoute
+  '/sweeper': typeof SweeperIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/weather': typeof WeatherRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
+  '/articles/': typeof ArticlesIndexRoute
+  '/sweeper/': typeof SweeperIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/weather'
+  fullPaths: '/' | '/about' | '/articles/$slug' | '/articles/' | '/sweeper/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/weather'
-  id: '__root__' | '/' | '/about' | '/weather'
+  to: '/' | '/about' | '/articles/$slug' | '/articles' | '/sweeper'
+  id:
+    '__root__' | '/' | '/about' | '/articles/$slug' | '/articles/' | '/sweeper/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  WeatherRoute: typeof WeatherRoute
+  ArticlesSlugRoute: typeof ArticlesSlugRoute
+  ArticlesIndexRoute: typeof ArticlesIndexRoute
+  SweeperIndexRoute: typeof SweeperIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,11 +96,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/weather': {
-      id: '/weather'
-      path: '/weather'
-      fullPath: '/weather'
-      preLoaderRoute: typeof WeatherRouteImport
+    '/articles/': {
+      id: '/articles/'
+      path: '/articles'
+      fullPath: '/articles/'
+      preLoaderRoute: typeof ArticlesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/articles/$slug': {
+      id: '/articles/$slug'
+      path: '/articles/$slug'
+      fullPath: '/articles/$slug'
+      preLoaderRoute: typeof ArticlesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sweeper/': {
+      id: '/sweeper/'
+      path: '/sweeper'
+      fullPath: '/sweeper/'
+      preLoaderRoute: typeof SweeperIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,7 +123,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  WeatherRoute: WeatherRoute,
+  ArticlesSlugRoute: ArticlesSlugRoute,
+  ArticlesIndexRoute: ArticlesIndexRoute,
+  SweeperIndexRoute: SweeperIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

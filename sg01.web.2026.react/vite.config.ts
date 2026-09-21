@@ -32,12 +32,18 @@ export default defineConfig({
             target: 'react',
             autoCodeSplitting: true,
         }),
-        react(),
+        react({  }),
         // ctroenvPlugin({
         //      schema: schema,
         //      failOnError: false,
         // }),
     ],
+    server: {
+        watch: {
+            useFsEvents: true,
+            usePolling: true
+        }
+    },
     resolve: {
         alias: {
             '@': resolve(import.meta.dirname, './src'),

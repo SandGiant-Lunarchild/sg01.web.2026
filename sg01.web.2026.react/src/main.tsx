@@ -7,8 +7,8 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 import { deLocalizeUrl, localizeUrl, type Locale, locales } from "./paraglide/runtime.js";
 
-function isValidLocale(locale: string): locale is Locale {
-    return locales.find((l) => l === locale) !== undefined;
+function isValidLocale(locale: string | null): locale is Locale {
+    return locale !== null && locales.find((l) => l === locale) !== undefined;
 }
 
 function localizeUrlRemoveLocale(url: URL) {
@@ -42,10 +42,10 @@ declare module '@tanstack/react-router' {
 const queryClient = new QueryClient();
 
 // Render the app
-const rootElement = document.getElementById('root');
+const rootElement = document.body;
 
-if (rootElement != null && !rootElement.innerHTML) {
-    createRoot(document.getElementById('root')!).render(
+if (rootElement != null) {
+    createRoot(rootElement).render(
         <StrictMode>
             <QueryClientProvider client={queryClient}>
                 <RouterProvider router={router} />
