@@ -2,7 +2,14 @@
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "example_message": "Hello world {username}",
   "title": "SG_01's Website",
+  "combined_title": "SG_01's Website - {page_title}",
   "home": {
     "page_title": "Home"
+  },
+  "about": {
+    "page_title": "About"
+  },
+  "articles": {
+    "page_title": "Articles"
   }
 }

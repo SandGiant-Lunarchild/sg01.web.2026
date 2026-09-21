@@ -21,6 +21,7 @@
     "@ngx-translate/core": "^18.0.0",
     "@ngx-translate/http-loader": "^18.0.0",
     "@tailwindcss/postcss": "^4.3.3",
+    "bootstrap-icons": "^1.13.1",
     "jest-editor-support": "*",
     "markdown-it": "^15.0.0",
     "postcss": "^8.5.26",

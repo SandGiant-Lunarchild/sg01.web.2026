@@ -18,11 +18,29 @@ const childRoutes: Routes = [
     path: '',
     title: () => localizeTitle("home.page_title"),
     component: Home,
+    data: { globalClassName: 'main-page' },
+  },
+  {
+    path: "about",
+    title: () => localizeTitle("about.page_title"),
+    loadComponent: () => import('./about/about').then((m) => m.About),
+  },
+  {
+    path: "articles",
+    title: () => localizeTitle("articles.page_title"),
+    loadComponent: () => import('./articles/articlesList').then((m) => m.ArticlesList),
+    children: [
+      {
+        path: ":articleId",
+        title: () => localizeTitle("articles.page_title"),
+        loadComponent: () => import('./articles/articleDetail').then((m) => m.ArticleDetail),
+      }
+    ]
   },
   {
     path: "test",
     title: `Test Page`,
-    component: TestPage
+    component: TestPage,
   },
   {
     path: "test/:test-value",
