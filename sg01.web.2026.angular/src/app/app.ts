@@ -6,6 +6,7 @@ import {
   TranslatePipe,
   TranslateDirective
 } from "@ngx-translate/core";
+import { LanguageLink, SwitchLanguageLink } from './languageLink';
 
 const resolveGlobalClassName: ResolveFn<string> = (route, state) => {
   return route.data['globalClassName'] as string ?? "";
@@ -15,7 +16,7 @@ const resolveGlobalClassName: ResolveFn<string> = (route, state) => {
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [RouterOutlet, RouterLink, TranslateDirective]
+  imports: [RouterOutlet, RouterLink, TranslateDirective, LanguageLink, SwitchLanguageLink]
 })
 export class App {
   private translate = inject(TranslateService);

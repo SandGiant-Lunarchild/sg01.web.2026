@@ -1,14 +1,11 @@
 <div class="language-selection">
-  <!--
-    <a href={localizeHref(location.href, { locale: "en" })}>🇬🇧</a>
-    <a href={localizeHref(location.href, { locale: "nl" })}>🇳🇱</a>
-  -->
+    <a switchLanguage="en">🇬🇧</a>&nbsp;<a switchLanguage="nl">🇳🇱</a>
 </div>
 
 <main [class]="globalClassName()">
   <div class="main-centering">
     <h2 class="site-title">
-      <a routerLink="/">
+      <a languageLink="/">
         SG_01 Lunarchild
       </a>
     </h2>
